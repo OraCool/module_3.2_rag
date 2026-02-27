@@ -1,0 +1,58 @@
+{
+  "name": "jmlr-rag-analysis",
+  "version": "1.0.0",
+  "description": "RAG-powered ML Papers Analysis & Visualization Application for EPAM AI Architecture Course Module 3.2",
+  "type": "module",
+  "scripts": {
+    "dev:backend": "tsx watch src/index.ts",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:backend": "tsc",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "ingest": "tsx src/scripts/ingest.ts",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts"
+  },
+  "keywords": [
+    "rag",
+    "machine-learning",
+    "langchain",
+    "chromadb",
+    "openai",
+    "cohere",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/community": "^0.3.20",
+    "@langchain/core": "^0.3.29",
+    "@langchain/openai": "^0.3.16",
+    "chromadb": "^1.9.3",
+    "cohere-ai": "^7.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "papaparse": "^5.4.1",
+    "winston": "^3.17.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "@types/papaparse": "^5.3.15",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.18.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}
